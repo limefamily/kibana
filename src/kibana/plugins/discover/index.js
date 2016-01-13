@@ -10,7 +10,7 @@ define(function (require, module, exports) {
   apps.register(function DiscoverAppModule() {
     return {
       id: 'discover',
-      name: 'Discover',
+      name: '创建查询',
       order: 0
     };
   });

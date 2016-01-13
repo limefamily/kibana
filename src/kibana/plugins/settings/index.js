@@ -34,7 +34,7 @@ define(function (require, module, exports) {
   apps.register(function SettingsAppModule() {
     return {
       id: 'settings',
-      name: 'Settings',
+      name: '设置',
       order: 3
     };
   });
