@@ -13,7 +13,7 @@ define(function (require) {
   apps.register(function VisualizeAppModule() {
     return {
       id: 'visualize',
-      name: '可视化',
+      name: '统计图',
       order: 1
     };
   });

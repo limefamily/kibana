@@ -1,0 +1,30 @@
+<kbn-settings-app section="logout">
+  <div class="kbn-settings-logout container" ng-controller="settingsLogout">
+    <div class="col-md-4 col-md-offset-4 jumbotron">
+      <center>
+        <img src='plugins/settings/sections/about/logo.png' alt="Kibana Barcode Logo" width="128" height="128"><br>
+        <h1>清檬养老</h1>
+         <input  type="button" value="注 销" class="btn btn-primary btn-block" onclick="logout()" />
+         
+      </center>
+    </div>
+  </div>
+  <script type="text/javascript">
+function delCookie(name)
+{
+var exp = new Date();
+exp.setTime(exp.getTime() - 1);
+var cval=getCookie(name);
+if(cval!=null)
+document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+
+
+function logout(){
+	delCookie("inputAcount");
+	delCookie("inputPassword");
+	window.location.href='../../index.html';
+}
+</script>
+
+</kbn-settings-app>

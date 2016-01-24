@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>登录</title>
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body style="border: 0px solid red; ">
+	
+	<div style="height: 50px;"></div>
+	
+	<div  class="">
+		<div class="site-login col-lg-offset-4">
+
+			<div class="col-lg-offset-2">
+				<img src='plugins/settings/sections/about/logo.png' alt=" Barcode Logo" width="128" height="128"><br>
+				<h1>清檬养老</h1>
+			</div>
+			<br>
+			<h1>登录</h1>
+
+			<div class="row">
+				<div class="col-lg-5">
+					<!--<form id="login-form" action="/qmylservice/frontend/web/index.php?r=site%2Flogin" method="post" role="form">-->
+					<form id="login-form" action="" method="post" role="form">
+						<input type="hidden" name="_csrf" value="T0FSVUY2ZXEmDyA.KX1dKSo4ETIOVyM6exUBJxcHLwALNyYwDlI0Gw==">
+						<div class="form-group field-loginform-username required has-success">
+							<label class="control-label" for="loginform-username">用户名</label>
+							<input type="text" id="loginform-username" class="form-control" name="LoginForm[username]">
+
+							<p class="help-block help-block-error"></p>
+						</div>
+						<div class="form-group field-loginform-password required has-success">
+							<label class="control-label" for="loginform-password">密码</label>
+							<input type="password" id="loginform-password" class="form-control" name="LoginForm[password]">
+
+							<p class="help-block help-block-error"></p>
+						</div>
+						<div class="form-group">
+						<button type="button" class="btn btn-primary btn-block" name="login-button" onclick="Login()">登录</button>                </div>
+
+						</form>        </div>
+					</div>
+				</div>
+			</div>
+		</body>
+		<script type="text/javascript">
+			function Login(){
+				var inputAcount =  document.getElementById('loginform-username').value;
+				var inputPassword =  document.getElementById('loginform-password').value;
+				setCookie('inputAcount',inputAcount);
+				setCookie('inputPassword',inputPassword);
+				window.location='index.html';
+			}
+			function setCookie(name,value)
+			{
+				var Days = 30;
+				var exp = new Date();
+				exp.setTime(exp.getTime() + Days*24*60*60*1);
+				document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+			}
+		</script>
+		</html>

@@ -90,10 +90,10 @@
           <div ng-show="resultState === 'none'">
               <div class="col-md-10 col-md-offset-1">
 
-                <h1>No results found <i aria-hidden="true" class="fa fa-meh-o"></i></h1>
+                <h1> 没有找到结果 <i aria-hidden="true" class="fa fa-meh-o"></i></h1>
 
                 <p>
-                  Unfortunately I could not find any results matching your search. I tried really hard. I looked all over the place and frankly, I just couldn't find anything good. Help me, help you. Here's some ideas:
+                  暂时没有找到任何结果，根据下面的建议修改一下查询条件：
                 </p>
 
                 <div class="shard-failures" ng-show="failures">
@@ -108,31 +108,31 @@
 
                 <div ng-show="opts.timefield">
                   <p>
-                    <h3>Expand your time range</h3>
-                    <p>I see you are looking at an index with a date field. It is possible your query does not match anything in the current time range, or that there is no data at all in the currently selected time range. Click the button below to open the time picker. For future reference you can open the time picker by clicking the <a class="btn btn-xs navbtn" ng-click="toggleTimepicker(); toggledTimepicker = !toggledTimepicker" aria-expanded="{{toggledTimepicker}}" aria-label="time picker">time picker <i aria-hidden="true" class="fa fa-clock-o"></i></a> in the top right corner of your screen.
+                    <h3>选择时间范围</h3>
+                    <p> 选择时间点击下面的选择时间按钮<a class="btn btn-xs navbtn" ng-click="toggleTimepicker(); toggledTimepicker = !toggledTimepicker" aria-expanded="{{toggledTimepicker}}" aria-label="time picker">选择时间 <i aria-hidden="true" class="fa fa-clock-o"></i></a> 或者点击屏幕右上方选择时间按钮.
                   </p>
                 </div>
 
-                <h3>Refine your query</h3>
-                <p>
-                  The search bar at the top uses Elasticsearch's support for Lucene <a href="http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax" target="_blank">Query String syntax</a>. Let's say we're searching web server logs that have been parsed into a few fields.
+                <h3>查询条件语法</h3>
+                <p>以下是对的
+                   <a href="http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax" target="_blank">查询条件</a> 示例
                 </p>
 
                 <p>
-                  <h4>Examples:</h4>
-                  Find requests that contain the number 200, in any field:
+                  <h4>示例:</h4>
+                  查询所有字段包含200的数字项：
                   <pre>200</pre>
 
-                  Or we can search in a specific field. Find 200 in the status field:
+                  或者可以查询指定字段项包含200内容的数据:
                   <pre>status:200</pre>
 
-                  Find all status codes between 400-499:
+                  查询 status 字段值范围是 400-499:
                   <pre>status:[400 TO 499]</pre>
 
-                  Find status codes 400-499 with the extension php:
+                  查询 status 字段值范围是 400-499 并且 extension 字段包含 php字符串:
                   <pre>status:[400 TO 499] AND extension:PHP</pre>
 
-                  Or HTML
+                  查询 status 字段值范围是 400-499 并且 extension 字段包含 php字符串 或者是HTML
                   <pre>status:[400 TO 499] AND (extension:php OR extension:html)</pre>
                 </p>
 
